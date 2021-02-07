@@ -1,4 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" );
+@import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
+
 
 *{
     margin: 0;
@@ -6,21 +8,46 @@
     box-sizing: border-box;
   }
 
+
+  
   .html,body{
-    height: 100vh;
+    height:125vh;
+    width: 100%;
     margin: 0;
-    background-color: blueviolet;
+    /*background-color: blueviolet;*/
+   background:var(--fondoPrimarioOscuro)
   }
+
+  :root{
+    --fondoPrimario:#312C51;
+    --fondoSecundario:#201d3a;
+    --colorLetra: #312C51;
+    --fondoPrimarioOscuro:#464d75;
+    --fondoSecundarioOscuro: #0c2363;
+    --tonalidad:#838daa ;
+    --colorLetraOscuro:#f0f0f4;
+    --generalFont:'Open Sans', sans-serif;
+    --border-radius:3px
+}
+  
 
   .head{
     display:none ;
   }
 
+  
+
   .container-title-button{
-    display:block ;
-    height: 15vh;
-    margin: 10px;
-    background-color: rgb(50, 131, 197);
+    
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+    /*background-color: rgb(50, 131, 197);*/
+    font-family: var(--generalFont);
+    background-color:var(--fondoSecundario);
+    color: var(--colorLetraOscuro);
+    
   }
 
   
@@ -30,17 +57,152 @@
     margin-block-end: 0.67em;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
+    
+    
   }
   .app-title{
     text-align: center;
     font-weight: 600;
     margin: 10px; 
-    letter-spacing: -1px;
-    background-color: aqua;
+    
+    /*letter-spacing: -1px;*/
+    /*-color: aqua;*/
   }
 
   .panel-buttons{
     height: 41px;
     margin: 10px;
-    background-color: coral;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 5px;
+    justify-content: center;
+   /* background-color: coral;*/
   }
+  /*********NAV BUTTONS*************/
+.button{
+  
+  height: 25px;
+  width: auto;
+  display:inline-block;
+  justify-content: center;
+  align-items: center;
+  padding: 3px 14px;
+  border-radius:var(--border-radius);
+  font-family: var(--generalFont);
+  font-size: .98em;
+  color: #FFFFFF;
+  border: none;
+ transition:background-color .2s;
+  text-transform: none;
+  margin-right: 10px;
+ cursor: pointer;
+}
+.button:hover{
+  background-color: var(--tonalidad);
+  
+  
+}
+
+/*************MAIN*****************/
+.main{
+  display:flex;
+  flex-grow: 1;
+  flex-direction: column;
+  padding: 0 20px;
+  margin-left:auto;
+  margin-right:auto;
+  justify-content: center;
+  align-items: center;
+  height:auto;
+  width:70%;
+ background-color:var(--fondoPrimarioOscuro);
+}
+  
+.section{
+  
+  width:15em;
+  height:auto;
+ background-color:white;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
+  font-family: 'Oswald', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 800;
+  font-weight: bold;
+  
+
+}
+.top-text, .bottom-text, .top-input{
+  width:100%;
+  height:auto;
+ padding:5px;
+}
+.center-text{
+  display: flex;
+  width: 100%;
+  height:70vh;
+  padding:20%;
+ background-color: black;
+}
+/**********Download Button************/
+
+.download-button-text {
+  display:flex;
+  margin-left: auto;
+  margin-right:auto;
+  margin-top:15px;
+  align-items:center;
+  border-radius: 3px;
+  background-color:var(--fondoSecundarioOscuro);
+  border:none;
+  color: #FFFFFF;
+  box-shadow:0px 3px #1a172c ;
+  text-align:right;
+  font-size: 15px;
+  padding: 25px;
+  width:200px;
+  height:20px;
+  cursor: pointer;
+  
+  
+  }
+  .fa, .fas,.far {
+    margin-right:10px ;
+
+    
+}
+
+.download-button-text:hover{
+  
+    background-color: #22366d;
+    opacity: 1;
+    right: 0;
+  transition: all 1s ease;
+  transform: translateY(-7px);
+  
+}
+
+/****************ASIDE*******************/
+ .selection-panel {
+  position: fixed;
+  right: 0;
+  top: 0;
+  overflow: auto;
+  width: 18%;
+  height: 100%;
+  background-color:var(--fondoPrimario);
+  /*background-color: var(--colorLetraOscuro);*/
+  text-transform: uppercase;
+  padding: 30px 10px;
+ }
+
+ .title-aside{
+   text-align: center;
+   padding: 0 20%;
+  
+
+ }
+  
+
