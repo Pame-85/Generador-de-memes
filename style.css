@@ -26,14 +26,37 @@
     --fondoSecundarioOscuro: #0c2363;
     --tonalidad:#838daa ;
     --colorLetraOscuro:#f0f0f4;
+    --color-button-default:#464d75;
     --generalFont:'Open Sans', sans-serif;
     --border-radius:3px
-}
-  
+    
 
-  .head{
-    display:none ;
-  }
+}
+input,button,select,textarea {
+  border: 0
+  
+  font-family: var(--generalFont);
+  background-color: transparent;
+  display: block;
+  outline: 0;
+}
+label {
+  display: block;
+  font-family: var(--generalFont);
+  font-size: 12px;
+  color:var(--colorLetraOscuro);
+}
+
+textarea {
+  resize: vertical;
+}
+
+select {
+  -moz-appearance: none;
+}
+.head{
+display:none ;
+}
 
   
 
@@ -52,7 +75,7 @@
 
   
   .h1{
-    display: block;
+    display:block;
     margin-block-start: 0.67em;
     margin-block-end: 0.67em;
     margin-inline-start: 0px;
@@ -62,11 +85,12 @@
   }
   .app-title{
     text-align: center;
-    font-weight: 600;
-    margin: 10px; 
+    font-weight:600;
+    margin: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
     
-    /*letter-spacing: -1px;*/
-    /*-color: aqua;*/
   }
 
   .panel-buttons{
@@ -83,13 +107,13 @@
   
   height: 25px;
   width: auto;
-  display:inline-block;
+  display:block;
   justify-content: center;
   align-items: center;
   padding: 3px 14px;
   border-radius:var(--border-radius);
   font-family: var(--generalFont);
-  font-size: .98em;
+  font-size:14px;
   color: #FFFFFF;
   border: none;
  transition:background-color .2s;
@@ -105,6 +129,7 @@
 
 /*************MAIN*****************/
 .main{
+  
   display:flex;
   flex-grow: 1;
   flex-direction: column;
@@ -119,7 +144,6 @@
 }
   
 .section{
-  
   width:15em;
   height:auto;
  background-color:white;
@@ -129,15 +153,16 @@
   align-self: center;
   font-family: 'Oswald', sans-serif;
   font-size: 2.5rem;
-  font-weight: 800;
+  font-weight: 50px;
   font-weight: bold;
   
 
 }
 .top-text, .bottom-text, .top-input{
+  
   width:100%;
   height:auto;
- padding:5px;
+ padding:10px;
 }
 .center-text{
   display: flex;
@@ -154,16 +179,16 @@
   margin-right:auto;
   margin-top:15px;
   align-items:center;
-  border-radius: 3px;
+  border-radius: 2px;
+  border: none;
   background-color:var(--fondoSecundarioOscuro);
-  border:none;
   color: #FFFFFF;
-  box-shadow:0px 3px #1a172c ;
+  box-shadow:0px 3px #1a172c;
   text-align:right;
   font-size: 15px;
   padding: 25px;
   width:200px;
-  height:20px;
+  height:25px;
   cursor: pointer;
   
   
@@ -179,7 +204,7 @@
     background-color: #22366d;
     opacity: 1;
     right: 0;
-  transition: all 1s ease;
+   transition: all 1s ease;
   transform: translateY(-7px);
   
 }
@@ -201,8 +226,167 @@
  .title-aside{
    text-align: center;
    padding: 0 20%;
-  
+}
+.panel-close-button {
+ position:absolute ;
+ color:var(--colorLetraOscuro);
+ background-color:var(--fondoPrimario);
+ top: 20px;
+ right: 15px;
+ padding: 0.5px;
+ margin-right:auto ;
+ margin-left: auto;
+ justify-content:center ;
+ border: 0;
+ outline:none ;
+ cursor: pointer;
+}
+/**************Panel de imagen*****************/
 
- }
-  
+.panel-title {
+  color:var(--colorLetraOscuro);
+  margin-top: 0;
+  margin-bottom: 20px;
+  width: 100%;
+  font-family: var(--generalFont);
+  font-size: 18px;
+  text-align: center;
+}
+.panel-control{
+  margin-bottom: 20px;
+}
+.panel-control-title {
+  color:var(--colorLetraOscuro);
+  margin-bottom: 8px;
+  width: 100%;
+  font-family: var(--generalFont);
+  font-size: 12px;
+  margin-top: 0;
+}
+.panel-control-input {
+  width: 100%;
+  height: 36px;
+  background-color:var(--color-button-default);
+  border-radius:var(--border-radius);
+  transition: background-color 0.2s;
+  padding: 5px 10px;
+  margin-bottom: 5px;
+  border: 0;
+  color: var(--colorLetraOscuro);
+  font-size:13px;
+  justify-content: center;
 
+}
+
+/*************Modo Color********************/
+input[type='color']::-webkit-color-swatch {
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  border-radius: 50%;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  margin-right: 10px;
+  
+}
+.panel-control-color {
+  position:relative;
+  height: 36px;
+  display: flex;
+  background-color: var(--color-button-default);
+  border-radius: var(--border-radius);
+}
+
+.panel-control-color > input[type='color'] {
+  width: 100%;
+  
+}
+
+.panel-control-color > input[type='color']::-webkit-color-swatch {
+  width: 18px;
+  max-width: 18px;
+  margin: 0;
+  
+}
+
+.panel-control-color > input[type='color']::-webkit-color-swatch-wrapper {
+  display: flex;
+  height: 36px;
+  border-radius: 35px;
+  padding: 8px 10px;
+  background-color: var(--color-boton-default);
+  display: flex;
+  box-sizing: border-box;
+  text-rendering: auto;
+  
+}
+
+.panel-control-color > input[type='color']:focus::-webkit-color-swatch-wrapper {
+  background-color:var(--color-button-default);
+  
+}
+
+.panel-control-color > span {
+  position: absolute;
+  left: 35px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: var(--generalFont);
+  font-size: 13px;
+  color:var(--colorLetraOscuro);
+  
+}
+
+.panel-control-columns {
+  display: flex;
+  justify-content: space-between;
+}
+
+.panel-control-columns .panel-control-column {
+  width: calc(50% - 5px);
+  margin-bottom: 0;
+}
+
+/*************FILTROS********************/
+
+
+.panel-control-slider{
+  margin-top:15px ;
+  
+}
+
+.panel-control-slider > input[type='range'] {
+  transition: 0.2s;
+  
+}
+
+
+.panel-control-slider > input[type='range']:focus {
+  background-color:var(--tonalidad);
+}
+
+.label{
+  cursor:default ;
+  
+}
+input[type='range'] {
+  width: 100%;
+  background-color:var(--tonalidad);
+  border-radius: 10px;
+  opacity: 50%;
+  height: 6px;
+  margin-top: 10px;
+  cursor:default;
+  
+} 
+
+#default-filters-button {
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  align-items:center ;
+  padding: 20 40px;
+  
+}
