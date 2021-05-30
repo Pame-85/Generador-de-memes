@@ -24,25 +24,27 @@
 
 <!--****************NAV***********************-->
 <nav class="panel-buttons">
-  <div class="button text" id="panel -img- button">
+  <div class="button image" id="panel-img-button">
    
-    <i class="fas fa-file-image button-icon-text" aria-hidden="true"></i>
+    <i class="fas fa-file-image button-icon-text" id="closeResponsive" onclick="closeNav()" aria-hidden="true"></i>
     Imagen
   
    </div>
-  <div class="button text" id="panel -text- button">
-    <i class="fas fa-font button-icon-text" aria-hidden="true"></i>
+  <div class="button text" id="panel-text-button">
+    <i class="fas fa-font button-icon-text" id="closeResponsive" onclick="closeNav()"aria-hidden="true"></i>
   Texto
     
   </div>
   <div class="button text-button dark" id="dark -theme- button">
-    <i class="far fa-lightbulb button-icon-text" aria-hidden="true"></i>
-  Modo oscuro
+    <i class="far fa-lightbulb button-icon-text" onclick="cambiarModo()"
+    aria-hidden="true"></i>
+    Modo oscuro
   </div>
-  <!--div class="button text-button light" id="light -theme- button">
+  <div class="button text-button light" id="light -theme- button" style="display:none">
     <i class="fas fa-lightbulb button-icon-text" aria-hidden="true"></i>
-    "Modo claro"
-  </div-->
+    Modo claro
+    
+  </div>
 </nav>
 </header>
 
@@ -57,24 +59,24 @@
 
   
   <!--****************DOWNLOAD BUTTON*************************-->  
-  <button class="download-button-text">
+  <button id="button-download" class="download-button-text">
     <i class="fas fa-download" aria-hidden="true"></i>  
     Descargar meme
   </button>
 
   <!--******************ASIDE*********************-->
-
-<aside class="selection-panel"id="panel">
+<aside class="selection-panel"id="panel-image" >
   <button class="panel-close-button"id="panel-close-button" aria-label="cerrar panel">
-<i class="fas fa-times"aria-hidden="true"></i>
+<i class="fas fa-times"aria-hidden="true" style="display:none"></i>
 </button>
 
 <!--*****************Panel-Img*******************-->
-<section class="panel-img"id="panel-img">
+
+<section class="panel-img"id="panel-img" style="display:none" >
   <h2 class="panel-title">IMAGEN</h2>
 <div class="panel-control">
   <h3 class="panel-control-title">URL</h3>
-  <input type="text"class="panel-control-input"id="url-img-input" aria-label="URL de imagen">
+  <input type="url"class="panel-control-input"id="url" aria-label="URL de imagen">
 </div>
 
 <!--****************FONDO*************************-->
@@ -82,22 +84,22 @@
 <div class="panel-control">
   <h3 class="panel-control-title">FONDO</h3>
   <div class="panel-control-columns">
-    <div class="panel-control-color panel-control-column">
-      <input aria-label="Color de fondo de imagen" type="color" id="blend-mode-color-input" value="#FFFFFF" aria-label="Color de fondo de imagen">
-      <span id="blend-mode-color" aria-hidden="true">#FFFFFF</span>
-    </div>
-    <div class="panel-control-column">
-      <select aria-label="Modo de mezcla de fondo de imagen" id="blend-mode-select" class="panel-control-input">
+  <div class="panel-control-color panel-control-column">
+  <input aria-label="Color de fondo de imagen" type="color" id="blend-mode-color-input" value="#FFFFFF" aria-label="Color de fondo de imagen">
+  <span id="blend-mode-color" aria-hidden="true">#FFFFFF</span>
+  </div>
+  <div class="panel-control-column">
+  <select aria-label="Modo de mezcla de fondo de imagen" id="blend-mode-select" class="panel-control-input">
         <option value="unset">Ninguno</option>
         <option value="lighten">Aclarar</option>
         <option value="darken">Oscurecer</option>
         <option value="difference">Diferencia</option>
         <option value="luminosity">Luminosidad</option>
         <option value="multiply">Multiplicar</option>
-      </select>
-    </div>
+  </select>
   </div>
-</div>
+  </div>
+  </div>
 
 <!--****************FILTROS*************************-->
 <div class="panel-control">
@@ -141,12 +143,132 @@
 </div>
 <button class="button button-default" id="default-filters-button">Reestablecer filtros</button>
 </section>
+
 <!--****************Panel de Texto*************************-->
 
 
+<section class="panel-text-oculto" id="panel-text" style="display: none">
+  
+<h2 class="panel-title">TEXTO</h2>
 
-   </aside>
-   </main>
-<script src="./main.js"></script>  
+  <div class="panel-control">
+    <h3 class="panel-control-title">SUPERIOR</h3>
+    <textarea aria-label="Texto superior" class="panel-control-input" id="top-text-input">TOP TEXT</textarea>
+    <div class="flex-container panel-control-checkbox">
+      <input type="checkbox" id="no-top-text-checkbox"><label for="no-top-text-checkbox">Sin texto
+        superior</label>
+    </div>
+  </div>
+  <div class="panel-control">
+    <h3 class="panel-control-title">INFERIOR</h3>
+    <textarea aria-label="Texto Inferior" class="panel-control-input"
+      id="bottom-text-input">BOTTOM TEXT</textarea>
+    <div class="flex-container panel-control-checkbox">
+      <input type="checkbox" id="no-bottom-text-checkbox"><label for="no-bottom-text-checkbox">Sin texto
+        inferior</label>
+    </div>
+  </div>
+  <!--******************FONTS**********************************-->
+
+  <div class="panel-control">
+    <h3 class="panel-control-title">FUENTE</h3>
+
+    <!--****************FAMILY FONTS***************************-->
+
+    <select name="Familia de fuente" id="text-font-select" class="panel-control-input" aria-label="Familia de fuente">
+      <option value="Arial">Arial</option>
+      <option value="Arial Black">Arial Black</option>
+      <option value="American Typewriter">American Typewriter</option>
+      <option value="Andale Mono">Andale Mono</option>
+      <option value="Comic Sans MS">Comic Sans MS</option>
+      <option value="Helvetica">Helvetica</option>
+      <option value="Impact" selected>Impact</option>
+      <option value="Verdana">Verdana</option>
+      <option value="Times New Roman">Times New Roman</option>
+    </select>
+    <div class="flex-container"div>
+      <!--***************SIZE**********************************-->
+      <input type="number" name="Tamaño de fuente" aria-label="Tamaño de fuente" class="panel-control-input" id="text-size-input" min="12"
+      value="40"/>
+      
+      <!--****************ALIGNED******************************-->
+      
+      <div class="buttons-container buttons-alignment">
+        <button class="button button-default" id="text-left-align-button"
+          aria-label="Alinear texto a la izquierda"><i class="fas fa-align-left" aria-hidden="true"></i></button>
+        <button class="button button-default" id="text-center-align-button"
+          aria-label="Alinear texto al centro"><i class="fas fa-align-center" aria-hidden="true"></i></button>
+        <button class="button button-default" id="text-right-align-button"
+          aria-label="Alineat texto a la derecha"><i class="fas fa-align-right" aria-hidden="true"></i></button>
+      </div>
+    </div>
+  </div>
+  <!--********************Color *********************************-->
+  <div class="panel-control panel-control-column">
+    <h3 class="panel-control-title">COLOR</h3>
+    <div class="panel-control-color">
+      <input name="Color de texto" type="color" id="text-color-input" value="#000000" aria-label="Color de texto" />
+      <span id="text-color" aria-hidden="true">#000000</span>
+    </div>
+  </div>
+
+  <!--*********************Background Color**********************-->
+
+  <div class="panel-control panel-control-column">
+    <h3 class="panel-control-title">FONDO</h3>
+    <div class="panel-control-color">
+      <input name="Color de fondo de texto" type="color" id="text-background-color-input" value="#FFFFFF" aria-label="Color de fondo de texto" />
+      <span id="text-background-color" aria-hidden="true">#FFFFFF</span>
+    </div>
+  </div>
+</div>
+<div class="flex-container panel-control-checkbox">
+  <input type="checkbox" id="text-no-background-checkbox"><label for="text-no-background-checkbox">Fondo
+    transparente</label>
+</div>
+</div>
+
+<!--***********************Outline******************************-->
+
+<div class="panel-control">
+  <h3 class="panel-control-title">CONTORNO</h3>
+  <div class="buttons-container">
+    <button class="button button-default" id="no-outline-button">Ninguno</button>
+    <button class="button button-default" id="light-outline-button">Claro</button>
+    <button class="button button-default" id="dark-outline-button">Oscuro</button>
+  </div>
+</div>
+
+<!--**********************Padding********************************-->
+
+<div class="panel-control">
+  <h3 class="panel-control-title">ESPACIADO</h3>
+  <input type="number" id="padding-input" class="panel-control-input" aria-label="Espaciado" min="10" max="50"
+    value="35">
+</div>
+
+<!--**********************Line Height****************************-->
+
+<div class="panel-control">
+  <h3 class="panel-control-title">INTERLINEADO</h3>
+  <select id="line-height-input" class="panel-control-input" aria-label="Interlineado">
+    <option value="0.8">0.8</option>
+    <option value="1">1</option>
+    <option value="1.2" selected>1.2</option>
+    <option value="1.5">1.5</option>
+    <option value="2">2</option>
+    <option value="2.5">2.5</option>
+  </select>
+</div>
+</section>
+</div>
+
+</aside>
+   
+        
+ </main>
+<script src="main.js"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.js" integrity="sha512-wUa0ktp10dgVVhWdRVfcUO4vHS0ryT42WOEcXjVVF2+2rcYBKTY7Yx7JCEzjWgPV+rj2EDUr8TwsoWF6IoIOPg==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js" integrity="sha512-Qlv6VSKh1gDKGoJbnyA5RMXYcvnpIqhO++MhIM2fStMcGT9i2T//tSwYFlcyoRRDcDZ+TYHpH8azBBCyhpSeqw==" crossorigin="anonymous"></script>
 </body>
 </html>
