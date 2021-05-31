@@ -117,6 +117,9 @@ hueFilter.addEventListener('change', filter);
 saturedFilter.addEventListener('change', filter);
 
 negativeFilter.addEventListener('change', filter);
+// Button Reset //
+
+
 
 
 
