@@ -323,22 +323,25 @@ intFont.addEventListener('change', (e) => {
 
 //Button Download//
 
-const resultImage = document.getElementById ('center')
-const buttonDownload = document.getElementById ('button-download')
+const download = document.getElementById ('button-download');
+
+const resultImage = document.getElementById ('panelCanvas')
 
 
-buttonDownload.addEventListener('click',() => {
-    console.log("soy yo")
-    descargarImagen()
-})
 
-download.addEventListener("click",()=>{
-    domtoimage.toBlob(imgContainer)
-      .then(function (blob) {
-      window.saveAs(blob, 'casa.png');
-    });
-  });
+const downloadImage = () => {
+    domtoimage.toBlob(panelCanvas)
+        .then(function (blob) {
+            saveAs(blob, 'my-meme.png');
+        });
+};
 
+
+download.addEventListener('click', () => {
+    downloadImage();
+    center.style.width= '100%'
+   
+});
 
 
 
