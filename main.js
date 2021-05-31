@@ -117,24 +117,213 @@ hueFilter.addEventListener('change', filter);
 saturedFilter.addEventListener('change', filter);
 
 negativeFilter.addEventListener('change', filter);
-// Button Reset //
+// Button Reset ////
 
+resetButton.addEventListener('click', (e) => {
+    e.preventDefault();
+    brightnessFilter.value = 1;
+    opacityFilter.value = 1;
+    contrastFilter.value = 100;
+    blurFilter.value = 0;
+    grayScaleFilter.value = 0;
+    sepiaaFilter.value = 0;
+    hueFilter.value = 0;
+    saturedFilter.value = 100;
+    negativeFilter.value = 0;
+    filter();
+});
 
+//Panel Texto//
 
+const memeTopText= document.getElementById('first-text'); 
+const memeBottomText= document.getElementById('second-text'); 
 
+const topTextArea = document.getElementById('top-text-input'); 
+const borrarTopText = document.getElementById('no-top-text-checkbox');
+const BottomtextArea= document.getElementById('bottom-text-input');
+const borrarBottomText = document.getElementById('no-bottom-text-checkbox');
 
+// Escritura //
 
+topTextArea.addEventListener('keydown', (e) => {
+    memeTopText.innerText = e.target.value;
+});
 
+BottomtextArea.addEventListener('keydown',(e) => {
+    memeBottomText.innerText= e.target.value;
+});
 
+// Borrar Escritura //
 
+borrarTopText.addEventListener('change', () => {
+    if (borrarTopText.checked === true) {
+        memeTopText.style.display = 'none';
+    } else {
+        memeTopText.style.display = 'block';
+    }
+});
 
+borrarBottomText.addEventListener('change', () => {
+    if (borrarBottomText.checked === true) {
+        memeBottomText.style.display = 'none';
+    } else {
+        memeBottomText.style.display = 'block';
+    }
+});
 
+//Cambio de fuentes//
 
+const fontSelection = document.getElementById ('text-font-select'); 
+const fontSize = document.getElementById('text-size-input'); 
+
+fontSelection.addEventListener('change', (e) => {
+    const fontValue = e.target.value;
+    if (fontValue === 'Arial') {
+        memeTopText.style.fontFamily = `Arial`;
+        memeBottomText.style.fontFamily = `Arial`;
+    } else if (fontValue === 'Arial Black') {
+        memeTopText.style.fontFamily = `Arial Black`;
+        memeBottomText.style.fontFamily = `Arial Black`;
+    } else if (fontValue === 'American Typewriter') {
+        memeTopText.style.fontFamily = `American Typewriter`;
+        memeBottomText.style.fontFamily = `American Typewriter`;
+    } else if (fontValue === 'Andale Mono') {
+        memeTopText.style.fontFamily = `Andale Mono`;
+        memeBottomText.style.fontFamily = `Andale Mono`;
+    } else if (fontValue === 'Comic Sans MS') {
+        memeTopText.style.fontFamily = `Comic Sans MS`;
+        memeBottomText.style.fontFamily = `Comic Sans MS`;
+    } else if (fontValue === 'Helvetica') {
+        memeTopText.style.fontFamily = `Helvetica`;
+        memeBottomText.style.fontFamily = `Helvetica`;
+    } else if (fontValue === 'Impact') {
+        memeTopText.style.fontFamily = `Impact`;
+        memeBottomText.style.fontFamily = `Impact`;
+    } else if(fontValue=== 'Verdana'){
+        memeTopText.style.fontFamily='Verdana';
+        memeBottomText.style.fontFamily='Verdana';
+    }
+      else {
+        memeTopText.style.fontFamily = `Times New Roman`;
+        memeBottomText.style.fontFamily = `Times New Roman`;
+    }
+});
+
+// Tamaño de Fuentes //
+
+fontSize.addEventListener('change', (e) => {
+    memeTopText.style.fontSize = `${e.target.value}px`;
+    memeBottomText.style.fontSize = `${e.target.value}px`;
+});
+
+//Alineación de Fuentes //
+
+const alignLeft= document.getElementById('text-left-align-button');
+const alignCenter=document.getElementById('text-center-align-button');
+const alignRight= document.getElementById('text-right-align-button');
+
+alignLeft.addEventListener('click', () => {
+    memeTopText.style.textAlign = 'left';
+    memeBottomText.style.textAlign = 'left';
+});
+
+alignCenter.addEventListener('click', () => {
+    memeTopText.style.textAlign='center';
+    memeBottomText.style.textAlign='center';
+})
+alignRight.addEventListener('click', () => {
+    memeTopText.style.textAlign= 'right';
+    memeBottomText.style.textAlign='right';
+})
+
+// Color y Fondo//
+
+const fontColor =document.getElementById('text-color-input'); 
+const fontColorValue= document.getElementById('text-color'); 
+const textBackColor =document.getElementById('text-background-color-input'); 
+const backColorValue = document.getElementById('text-background-color')
+
+fontColor.addEventListener('input', (e) => {
+    memeTopText.style.color = e.target.value;
+    memeBottomText.style.color = e.target.value;
+    fontColorValue.innerText = `${e.target.value}`;
+});
+
+textBackColor.addEventListener('input', (e) => {
+    memeTopText.style.backgroundColor = e.target.value;
+    memeBottomText.style.backgroundColor = e.target.value;
+    backColorValue.innerText = `${e.target.value}`;
+});
+
+// Fondo Transparente //
+
+const transparentBack =document.getElementById('text-no-background-checkbox');
+
+transparentBack.addEventListener('change', () => {
+    if (transparentBack.checked) {
+        memeTopText.style.backgroundColor = 'black';
+        memeBottomText.style.backgroundColor = 'black';
+
+    } else {
+        memeTopText.style.backgroundColor = 'transparent';
+        memeTopText.style.zIndex='2';
+        memeBottomText.style.backgroundColor = 'transparent';
+        memeBottomText.style.marginTop='-1px';
+    }
+})
+//Contorno//
+
+const noContour = document.getElementById('no-outline-button'); 
+const lightContour = document.getElementById('light-outline-button'); 
+const darkContour = document.getElementById ('dark-outline-button')
+
+noContour.addEventListener('click', (e) => {
+    e.preventDefault();
+    memeTopText.classList.remove('light-outline-button');
+    memeTopText.classList.remove('dark-outline-button');
+    memeBottomText.classList.remove('light-outline-button');
+    memeBottomText.classList.remove('dark-outline-button');
+});
+
+lightContour.addEventListener('click',(e)=> {
+    e.preventDefault();
+    memeTopText.classList.add('light-outline-button');
+    memeBottomText.classList.add('light-outline-button');
+    memeTopText.classList.remove('dark-outline-button');
+    memeBottomText.classList.remove('dark-outline-button');
+})
+
+darkContour.addEventListener('click',(e)=> {
+    e.preventDefault();
+    memeTopText.classList.add('dark-outline-button');
+    memeBottomText.classList.add('dark-outline-button');
+    memeTopText.classList.remove('light-outline-button');
+    memeBottomText.classList.remove('light-outline-button');
+})
+
+// Padding//
+
+const fontSpacing =document.getElementById ('padding-input')
+
+fontSpacing.addEventListener('change', (e) => {
+    memeTopText.style.padding = `${e.target.value}px 15px`;
+    memeBottomText.style.padding = `${e.target.value}px 15px`;
+    memeBottomText.style.marginTop = '0';
+});
+
+//Interlineado//
+
+const intFont = document.getElementById('line-height-input');
+intFont.addEventListener('change', (e) => {
+    memeTopText.style.lineHeight = `${e.target.value}`;
+    memeBottomText.style.lineHeight = `${e.target.value}`;
+    memeBottomText.style.marginTop = '0';
+});
 
 
 //Button Download//
 
-const resultImage = document.getElementById ('panel-img')
+const resultImage = document.getElementById ('center')
 const buttonDownload = document.getElementById ('button-download')
 
 
@@ -143,12 +332,14 @@ buttonDownload.addEventListener('click',() => {
     descargarImagen()
 })
 
-const descargarImagen = () => {
-    domtoimage.toBlob(document.getElementById('resultImage'))
-    .then(function (blob) {
-        window.saveAs(blob, 'my-node.png');
+download.addEventListener("click",()=>{
+    domtoimage.toBlob(imgContainer)
+      .then(function (blob) {
+      window.saveAs(blob, 'casa.png');
     });
-}
+  });
+
+
 
 
 

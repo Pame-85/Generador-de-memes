@@ -398,7 +398,7 @@ input[type='color']::-webkit-color-swatch {
 .panel-control-slider{
   margin-top:15px ;
   font-family: var(--generalFont);
-  font-size:15px;
+  font-size:12px;
   color: var(--colorLetraOscuro);
   
   
@@ -496,6 +496,13 @@ input[type='range'] {
   color: var(--colorLetraOscuro);
   font-family: var(--generalFont);
 
+}
+.light-outline-button{
+  -webkit-text-stroke: 0.5px white;
+}
+
+.dark-outline-button{
+  -webkit-text-stroke: 1px black;
 }
 
 
