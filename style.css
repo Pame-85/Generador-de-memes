@@ -1,18 +1,30 @@
+/* Detalle, pero es mejor importar tus tipografias en HTML, ya que
+hace que la carga de la web sea mas rapida */
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" );
 @import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
 
+/* ojo con la sintaxis en css. siempre deja espacios entre el selector y las llaves
+* { */
 
+  
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    /* cuidado con el tabulado. esta llave deberia cerrar dos espacios antes */
   }
 
-
+/* ojo con el tabulado. esto, y todo lo que viene, deberia estar dos espacios antes
+hay extensiones para vscode que te podes bajar que te acomodan el archivo de css */
   .html,body{
+    /* no es buena practica darle medidas fijas ni al body ni al html */
     height:125vh;
     width: 100%;
     margin: 0;
+    /* le diste un alto de 125 a tu body: o sea, el 100% de la pantalla y 25% mas, 
+    asi que queda mas alto que la pantalla y hay un scroll vertical
+y en esta orden, estas diciendo que no haya scroll vertical... por que no darle 
+un height de 100 y listo? */
     overflow-y: hidden;
    background:var(--fondoPrimarioOscuro)
   }
@@ -45,11 +57,15 @@
       
       }
 
+/* ojo con el tabulado, deberia estar todo en la misma linea salvo lo que esta dentro de
+las media queries
+deja espacios entre comas */
       input,button,select,textarea {
         border: 0;
         font-family: var(--generalFont);
         background-color:transparent;
         display:block;
+        /* nunca, nunca, nunca saques el outline de tus elementos de formulario */
         outline: 0;
       }    
 
@@ -58,6 +74,7 @@
   font-family: var(--generalFont);
   font-size: 12px;
   color:var(--colorLetraOscuro);
+  /* innecesario */
   cursor:default ;
     
   
@@ -82,6 +99,7 @@ display:none ;
     flex-direction: column;
     height: auto;
     width: 100%;
+    /* no dejes codigo comentado en una entrega */
     /*background-color: rgb(50, 131, 197);*/
     font-family: var(--generalFont);
     background-color:var(--fondoSecundario);
@@ -91,6 +109,9 @@ display:none ;
 
   
   .h1{
+    /* estos son los estilos por defecto? no son necesarios
+    estas usando la clase h1 pero no existe en tu codigo
+    solo existe el elemento h1 */
     display:block;
     margin-block-start: 0.67em;
     margin-block-end: 0.67em;
@@ -105,6 +126,7 @@ display:none ;
     margin: 10px;
     margin-left: auto;
     margin-right: auto;
+    /* esta orden solo tiene sentido si ademas tenemos un display flex */
     justify-content: center;
     
   }
@@ -231,6 +253,7 @@ display:none ;
   
     background-color: #22366d;
     opacity: 1;
+    /* esta orden solo tiene sentido si elemento tiene position */
     right: 0;
    transition: all 1s ease;
   transform: translateY(-7px);
@@ -242,6 +265,7 @@ display:none ;
   position: absolute;
   right: 0;
   top: 0;
+  /* innecesario */
   overflow:auto;
   width: 18%;
   height: 100%;
@@ -264,6 +288,7 @@ display:none ;
   justify-content: flex-start;
   background-color: var(--fondoSecundario);
   padding: 30px 15px;
+  /* innecesario */
   overflow: auto;
   position: fixed;
   top: 0;
@@ -284,8 +309,10 @@ display:none ;
  padding: 0.5px;
  margin-right:auto ;
  margin-left: auto;
+ /* esta orden no tiene sentido si elemento no tiene flex  */
  justify-content:center ;
  border: 0;
+ /* no le saques el outline a los elementos, nunca */
  outline:none ;
  cursor: pointer;
 }
@@ -333,6 +360,7 @@ input[type='color']::-webkit-color-swatch {
   min-width: 18px;
   border-radius: 50%;
   border: 0;
+  /* no tienen ni margin ni padding por defecto, esto no es necesario */
   margin: 0;
   padding: 0;
   cursor: pointer;
@@ -472,6 +500,7 @@ input[type='range'] {
 
 .buttons-alignment .button {
   margin: 0;
+  /* no te estas complicando un poco de mas aca? */
   width: calc(100% / 3 - 11px / 3);
   min-width:0;
   align-items: center;

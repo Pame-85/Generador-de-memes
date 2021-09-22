@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<!-- La pagina esta en ingles, pero el lenguaje del documento en español. Un lector de pantalla trataria de 
+leerla en español (va a leer "dounload meme") y buscadores como google van a recomendar esta web a 
+hispanohablantes. El lang del documento debe coincidir con el lenguaje que usan los usuarios de esta pagina.  -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -25,7 +28,7 @@
 <!--****************NAV***********************-->
 <nav class="panel-buttons">
   <div class="button image" id="panel-img-button">
-   
+   <!-- No es necesario aria-hidden en los iconos, ya que el lector de pantalla los ignora por defecto -->
     <i class="fas fa-file-image button-icon-text" id="closeResponsive" onclick="closeNav()" aria-hidden="true"></i>
     Imagen
   
@@ -40,6 +43,8 @@
     aria-hidden="true"></i>
     Modo oscuro
   </div>
+  <!-- No agregues estilos en html: eso es trabajo de CSS -->
+  <!-- Muy mala idea poner espacios entre los guiones de tu id: es receta para que alguien se confunda y los olvide -->
   <div class="button text-button light" id="light -theme- button" style="display:none">
     <i class="fas fa-lightbulb button-icon-text" aria-hidden="true"></i>
     Modo claro
@@ -50,7 +55,9 @@
 
 <!--****************MAIN*************************-->
 <main class="main">
+  <!-- los ids y clases siempre separados con-guiones. camelCase es para javascript -->
   <section id="panelCanvas" class="section">
+    <!-- no corresponde la etiqueta article aqui -->
     <article id="first-text" class="top-input">TOP TEXT</article>
     <article id="center-text" class="center-text"></article>
     <article id="second-text" class="bottom-text">BOTTOM TEXT</article>
@@ -85,6 +92,7 @@
   <h3 class="panel-control-title">FONDO</h3>
   <div class="panel-control-columns">
   <div class="panel-control-color panel-control-column">
+    <!-- Todos tus elementos de formulario deben estar rodeados de la etiqueta form -->
   <input aria-label="Color de fondo de imagen" type="color" id="blend-mode-color-input" value="#FFFFFF" aria-label="Color de fondo de imagen">
   <span id="blend-mode-color" aria-hidden="true">#FFFFFF</span>
   </div>
@@ -242,6 +250,7 @@
 <!--**********************Padding********************************-->
 
 <div class="panel-control">
+  <!-- esto es un label, no un h3 -->
   <h3 class="panel-control-title">ESPACIADO</h3>
   <input type="number" id="padding-input" class="panel-control-input" aria-label="Espaciado" min="10" max="50"
     value="35">
