@@ -3,8 +3,11 @@
 
 const lightBtn = document.getElementById('light -theme- button'); 
 const darkBtn = document. getElementById ('dark -theme- button'); 
-
+// atencion a los espacios, estas dejando muchos de mas 
+// darkBtn.addEventListener('click', () => {
 darkBtn.addEventListener( 'click', ()  => {
+    // separa con un espacio el = 
+    // darkBtn.style.display = 'none';
     darkBtn.style.display='none';
     lightBtn.style.display='inline';
     document.body.classList.remove('dark-theme');
@@ -46,9 +49,13 @@ imageBtn.addEventListener('click',() => {
 
 
 // URL//
+// no dejes espacio entre el metodo y los parametros
+// const url = document.getElementById('url')
 const url = document.getElementById ('url')
 const center = document.getElementById ('center-text')
 
+// ojo con los espacios
+// url.addEventListener('keyup', (e) => {
 url.addEventListener('keyup',(e)=>{
     center.style.backgroundImage= `url(${e.target.value})`
     center.style.backgroundPosition='center'
@@ -62,10 +69,20 @@ const valueOfColor = document.getElementById('blend-mode-color');
 const imageOptions = document.getElementById('blend-mode-select');
 
 colorForImage.addEventListener('input', (e) => {
+    // no es necesaria la interpolacion aca
+    // center.style.backgroundColor = e.target.value;
+    // valueOfColor.innerText = e.target.value;
     center.style.backgroundColor = `${e.target.value}`;
     valueOfColor.innerText = `${e.target.value}`;
 });
 imageOptions.addEventListener('change', (e) => {
+    // no esta mal esta function, pero la podrias hacer mucho mas sencilla 
+    // no necesitas el if porque toda la info que necesitas esta en la variable "valor"
+    // imageOptions.addEventListener('change', (e) => {
+    //     const valor = e.target.value;
+    //     center.style.backgroundBlendMode = valor
+    // }
+
     const valor = e.target.value;
     if (valor === 'lighten') {
         center.style.backgroundBlendMode = 'lighten';
@@ -97,6 +114,15 @@ const resetButton = document.getElementById ('default-filters-button');
 
 
 const filter = () => {
+    // cuando el texto es muy largo, deja un salto de linea
+    // asi el lector no tiene que hacer scroll horizontal 
+    // center.style.filter = `
+    //     brightness(${brightnessFilter.value}) opacity(${opacityFilter.value}) 
+    //     contrast(${contrastFilter.value}%) blur(${blurFilter.value}px) 
+    //     grayscale(${grayScaleFilter.value}%) sepia(${sepiaaFilter.value}%) 
+    //     hue-rotate(${hueFilter.value}deg) saturate(${saturedFilter.value}%) 
+    //     invert(${negativeFilter.value})
+    //     `;
     center.style.filter = `brightness(${brightnessFilter.value}) opacity(${opacityFilter.value}) contrast(${contrastFilter.value}%) blur(${blurFilter.value}px) grayscale(${grayScaleFilter.value}%) sepia(${sepiaaFilter.value}%) hue-rotate(${hueFilter.value}deg) saturate(${saturedFilter.value}%) invert(${negativeFilter.value})`;
 };
 
@@ -156,6 +182,8 @@ BottomtextArea.addEventListener('keydown',(e) => {
 // Borrar Escritura //
 
 borrarTopText.addEventListener('change', () => {
+    // no necesitas comparar contra booleanos, es lo mismo decir:
+    // if (borrarTopText.checked) {
     if (borrarTopText.checked === true) {
         memeTopText.style.display = 'none';
     } else {
@@ -177,6 +205,8 @@ const fontSelection = document.getElementById ('text-font-select');
 const fontSize = document.getElementById('text-size-input'); 
 
 fontSelection.addEventListener('change', (e) => {
+    // Mismo comentario aqui que en imageOptions.addEventListener
+    // esta funcion podria ser muchisimo mas breve 
     const fontValue = e.target.value;
     if (fontValue === 'Arial') {
         memeTopText.style.fontFamily = `Arial`;
@@ -246,12 +276,14 @@ const backColorValue = document.getElementById('text-background-color')
 fontColor.addEventListener('input', (e) => {
     memeTopText.style.color = e.target.value;
     memeBottomText.style.color = e.target.value;
+    // no es necesario interpolar aqui
     fontColorValue.innerText = `${e.target.value}`;
 });
 
 textBackColor.addEventListener('input', (e) => {
     memeTopText.style.backgroundColor = e.target.value;
     memeBottomText.style.backgroundColor = e.target.value;
+    // no es necesario interpolar aqui
     backColorValue.innerText = `${e.target.value}`;
 });
 
@@ -315,6 +347,7 @@ fontSpacing.addEventListener('change', (e) => {
 
 const intFont = document.getElementById('line-height-input');
 intFont.addEventListener('change', (e) => {
+    // no es necesario interpolar aqui
     memeTopText.style.lineHeight = `${e.target.value}`;
     memeBottomText.style.lineHeight = `${e.target.value}`;
     memeBottomText.style.marginTop = '0';
