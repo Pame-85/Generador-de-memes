@@ -23,11 +23,12 @@ lightBtn.addEventListener( 'click', ()  => {
 
 //cambio de paneles//
 
-const closeResponsive = document.getElementById ('closeResposive');
+const closeResponsive = document.getElementById ('panel-close-button');
 const textBtn  = document.getElementById('panel-text-button'); 
 const imageBtn = document.getElementById ('panel-img-button');
 const asideImage = document.getElementById('panel-img');
 const asideText = document.getElementById('panel-text');
+
 
 textBtn.addEventListener('click', () =>{
     asideImage.style.display = 'none';
@@ -40,6 +41,13 @@ imageBtn.addEventListener('click',() => {
     asideText.style.display='none';
     
 });
+
+closeResponsive.addEventListener('click',()=>{
+    center.style.display='block';
+    asideImage.style.display='none'
+    asideText.style.display='none'
+    
+})
 
 
 //Panel imagen//
@@ -319,6 +327,21 @@ intFont.addEventListener('change', (e) => {
     memeBottomText.style.lineHeight = `${e.target.value}`;
     memeBottomText.style.marginTop = '0';
 });
+
+const ajustarTexto = () => {
+    if (window.innerWidth > 1100) {
+      return
+    }
+  
+    const tamanioTexto = Math.round((window.innerWidth / 10) * 0.5)
+    const padding = Math.round((window.innerWidth / 10) * 0.2)
+  
+    $('text-size-input').value = tamanioTexto
+    $('padding-input').value = padding
+  
+    actualizarEspaciado()
+    actualizarTamanioTexto()
+  }
 
 
 //Button Download//
