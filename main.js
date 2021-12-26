@@ -40,13 +40,14 @@ function closeNav() {
 textBtn.addEventListener('click', () =>{
     asideImage.style.display = 'none';
     asideText.style.display = 'flex';
+    asideResponsive.style.display='block'
     
 });
 
 imageBtn.addEventListener('click',() => {
     asideImage.style.display='block';
     asideText.style.display='none';
-    
+    asideResponsive.style.display='block'
 });
 //Panel imagen//
 
