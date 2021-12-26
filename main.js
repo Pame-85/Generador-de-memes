@@ -43,7 +43,7 @@ imageBtn.addEventListener('click',() => {
 });
 
 closeResponsive.addEventListener('click',()=>{
-    center.style.display='block';
+    main.style.display='block';
     asideImage.style.display='none'
     asideText.style.display='none'
     

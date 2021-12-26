@@ -263,7 +263,7 @@ textarea {
   z-index: 10;
 }
 
-.panel-close-button {
+.close-button {
   display: block;
   position: fixed;
   color: var(--colorLetraOscuro);
@@ -472,24 +472,20 @@ input[type="range"] {
 }
 
 /****************Responsive*******************/
-@media screen and (min-width: 1300px){
-.panel-close-button{
-  display:none
-}
-}
+
 
 @media screen and (max-width: 1000px) and (max-width: 700px) {
   .selection-panel {
     display: block;
     width: 100%;
   }
-  .panel {
-    display: block;
+  .close-button {
+    display:flex;
   }
   
 }
 
-@media (max-width: 800px) and (min-width: 300px) {
+/* @media (max-width: 800px) and (min-width: 300px) {
   .top-text,
   .bottom-text,
   .top-input,
@@ -499,6 +495,19 @@ input[type="range"] {
     width: 100%;
     justify-content: center;
     align-items: center;
+  }
+} */
+
+@media (max-width:800px) and (min-width:300px){
+  .selection-panel{
+      display: none;
+      width: 100%;
+  }
+
+  .responsive{
+      display: block;
+      width: 100%;
+      z-index: 3;
   }
 }
 
