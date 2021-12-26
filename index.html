@@ -26,12 +26,12 @@
 <nav class="panel-buttons">
   <div class="button image" id="panel-img-button">
    
-    <i class="fas fa-file-image button-icon-text" id="closeResponsive" onclick="closeNav()" aria-hidden="true"></i>
+    <i class="fas fa-file-image button-icon-text"  aria-hidden="true"></i>
     Imagen
   
    </div>
   <div class="button text" id="panel-text-button">
-    <i class="fas fa-font button-icon-text" id="closeResponsive" onclick="closeNav()"aria-hidden="true"></i>
+    <i class="fas fa-font button-icon-text" aria-hidden="true"></i>
   Texto
     
   </div>
@@ -66,9 +66,9 @@
 </main>
 
   <!--******************ASIDE*********************-->
-<aside class="selection-panel"id="" >
-  <button class="close-button" id="panel-close-button" aria-label="Cerrar panel">
-    <i class="fas fa-times" aria-hidden="true"></i>
+<aside class="selection-panel"id="selection-panel-close" >
+  <button class="close-button">
+    <i class="fas fa-times"id="closeResponsive" onclick="closeNav()"></i>
   </button>
 
 <!--*****************Panel-Img*******************-->
@@ -86,7 +86,7 @@
   <h3 class="panel-control-title">FONDO</h3>
   <div class="panel-control-columns">
   <div class="panel-control-color panel-control-column">
-  <input aria-label="Color de fondo de imagen" type="color" id="blend-mode-color-input" value="#FFFFFF" aria-label="Color de fondo de imagen">
+  <input type="color" id="blend-mode-color-input" value="#FFFFFF" aria-label="Color de fondo de imagen">
   <span id="blend-mode-color" aria-hidden="true">#FFFFFF</span>
   </div>
   <div class="panel-control-column">

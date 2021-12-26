@@ -9,30 +9,37 @@ darkBtn.addEventListener( 'click', ()  => {
     lightBtn.style.display='inline';
     document.body.classList.remove('dark-theme');
     document.body.classList.add('light-theme');
-    body.style.backgroundImage= 'none';
-});
+})
 
 lightBtn.addEventListener( 'click', ()  => {
     lightBtn.style.display='none';
     darkBtn.style.display='inline';
     document.body.classList.remove('light-theme');
     document.body.classList.add('dark-theme');
-    body.style.backgroundImage= 'none';
-}); 
+})
 
 
 //cambio de paneles//
 
 const closeResponsive = document.getElementById ('panel-close-button');
+const asideResponsive=document.getElementById ('selection-panel-close')
 const textBtn  = document.getElementById('panel-text-button'); 
 const imageBtn = document.getElementById ('panel-img-button');
 const asideImage = document.getElementById('panel-img');
 const asideText = document.getElementById('panel-text');
 
+// Responsive //
+debugger
+
+function closeNav() {
+    asideImage.style.display = 'none';
+    asideText.style.display = 'none'
+    asideResponsive.style.display='none'
+  }
 
 textBtn.addEventListener('click', () =>{
     asideImage.style.display = 'none';
-    asideText.style.display = 'block';
+    asideText.style.display = 'flex';
     
 });
 
@@ -41,15 +48,6 @@ imageBtn.addEventListener('click',() => {
     asideText.style.display='none';
     
 });
-
-closeResponsive.addEventListener('click',()=>{
-    main.style.display='block';
-    asideImage.style.display='none'
-    asideText.style.display='none'
-    
-})
-
-
 //Panel imagen//
 
 
