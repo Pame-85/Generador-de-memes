@@ -58,7 +58,7 @@ textarea {
   font-family: var(--generalFont);
   font-size: 12px;
   color: var(--colorLetraOscuro);
-  cursor: default;
+  cursor:default;
 }
 
 .textarea {
@@ -129,6 +129,7 @@ textarea {
 
 .button:hover {
   background-color: var(--tonalidad);
+  
 }
 /*************MAIN*****************/
 .main {
@@ -181,9 +182,9 @@ textarea {
   display: flex;
   margin-left: auto;
   margin-right: auto;
-  
+  margin-top:20px;
   border-radius: 2px;
-  border: none;
+  border:none;
   background-color: var(--fondoSecundarioOscuro);
   color: white;
   box-shadow: 0px 3px #1a172c;
@@ -222,7 +223,7 @@ textarea {
 
 
 .selection-panel {
-  position: fixed;
+  position:fixed;
   right: 0;
   top: 0;
   overflow: auto;
@@ -320,6 +321,7 @@ textarea {
 }
 
 /*************Modo Color********************/
+
 input[type="color"]::-webkit-color-swatch {
   width: 18px;
   height: 18px;
@@ -495,12 +497,6 @@ input[type="range"] {
   }
   
 }
-
-
-
-
-
-
 @media (max-width: 800px) and (min-width: 300px) {
   .section {
     display: flex;
@@ -510,9 +506,9 @@ input[type="range"] {
     width: 80%;
   }
   .selection-panel{
-      display:flex;
-      width: 100%;
-      /* margin-top:1em ; */
+      display:none;
+      
+      
   }
   .close-button {
     display:flex;
@@ -532,27 +528,16 @@ input[type="range"] {
   }
  .button{
    font-size:90% ;
+   cursor: pointer;
  }
 }
-@media screen and (max-width: 2350px) and (min-width:800px) {
-  .section {
-    display: flex;
-    justify-content: center;
-    align-self: center;
-    font-size:2em;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom:2%;
-    cursor:pointer;
-
-    width: 44%;
-    height: 70%;
-  }
-  .default-filters-button {
-    
-    height: 50px;
-  }
+@media screen and (max-width:2300px) and (min-width:800px){
   .close-button{
-    display:none;
+    display: none;
+  }
+  .button{
+    cursor:pointer;
   }
 }
+
+

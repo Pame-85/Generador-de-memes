@@ -26,22 +26,21 @@
 <nav class="panel-buttons">
   <div class="button image" id="panel-img-button">
    
-    <i class="fas fa-file-image button-icon-text"  aria-hidden="true"></i>
+    <i class="fas fa-file-image button-icon-text"></i>
     Imagen
   
    </div>
   <div class="button text" id="panel-text-button">
-    <i class="fas fa-font button-icon-text" aria-hidden="true"></i>
+    <i class="fas fa-font button-icon-text"></i>
   Texto
     
   </div>
-  <div class="button text-button dark" id="dark -theme- button">
-    <i class="far fa-lightbulb button-icon-text" onclick="cambiarModo()"
-    aria-hidden="true"></i>
+  <div class="button text-button dark" id="dark-theme-button">
+    <i class="far fa-lightbulb button-icon-text" onclick="cambiarModo()"></i>
     Modo oscuro
   </div>
-  <div class="button text-button light" id="light -theme- button" style="display:none">
-    <i class="fas fa-lightbulb button-icon-text" aria-hidden="true"></i>
+  <div class="button text-button light" id="light-theme-button"style="display:none">
+    <i class="fas fa-lightbulb button-icon-text"></i>
     Modo claro
     
   </div>
@@ -50,10 +49,10 @@
 
 <!--****************MAIN*************************-->
 <main class="main">
-  <section id="panelCanvas" class="section">
-    <article id="first-text" class="top-input">TOP TEXT</article>
-    <article id="center-text" class="center-text"></article>
-    <article id="second-text" class="bottom-text">BOTTOM TEXT</article>
+  <section id="canvas" class="section">
+    <div id="first-text" class="top-input">TOP TEXT</div>
+    <div id="center-text" class="center-text"></div>
+    <div id="second-text" class="bottom-text">BOTTOM TEXT</div>
   </section>
 
 
@@ -75,15 +74,16 @@
 
 <section class="panel-img"id="panel-img" style="display:none" >
   <h2 class="panel-title">IMAGEN</h2>
-<div class="panel-control">
-  <h3 class="panel-control-title">URL</h3>
+<form class="panel-control">
+  <label class="panel-control-title">URL</label>
   <input type="url"class="panel-control-input"id="url" aria-label="URL de imagen">
-</div>
+</form>
+
 
 <!--****************FONDO*************************-->
 
 <div class="panel-control">
-  <h3 class="panel-control-title">FONDO</h3>
+  <label class="panel-control-title">FONDO</label>
   <div class="panel-control-columns">
   <div class="panel-control-color panel-control-column">
   <input type="color" id="blend-mode-color-input" value="#FFFFFF" aria-label="Color de fondo de imagen">
@@ -104,7 +104,7 @@
 
 <!--****************FILTROS*************************-->
 <div class="panel-control">
-  <h3 class="panel-control-title">FILTROS</h3>
+  <label class="panel-control-title">FILTROS</label>
   <div class="panel-control-slider">
     <label for="brightness-slider">BRILLO</label>
     <input type="range" id="brightness-slider" min="0" max="1" value="1" step="0.1">

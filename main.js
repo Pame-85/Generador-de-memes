@@ -1,8 +1,8 @@
 //Modo claro / Oscuro//
 
 
-const lightBtn = document.getElementById('light -theme- button'); 
-const darkBtn = document. getElementById ('dark -theme- button'); 
+const lightBtn = document.getElementById('light-theme-button'); 
+const darkBtn = document. getElementById ('dark-theme-button'); 
 
 darkBtn.addEventListener( 'click', ()  => {
     darkBtn.style.display='none';
@@ -29,12 +29,12 @@ const asideImage = document.getElementById('panel-img');
 const asideText = document.getElementById('panel-text');
 
 // Responsive //
-debugger
+
 
 function closeNav() {
     asideImage.style.display = 'none';
-    asideText.style.display = 'none'
-    asideResponsive.style.display='none'
+    asideText.style.display = 'none';
+    asideResponsive.style.display='none';
   }
 
 textBtn.addEventListener('click', () =>{
@@ -347,12 +347,12 @@ const ajustarTexto = () => {
 
 const download = document.getElementById ('button-download');
 
-const resultImage = document.getElementById ('panelCanvas')
+const resultImage = document.getElementById ('canvas')
 
 
 
 const downloadImage = () => {
-    domtoimage.toBlob(panelCanvas)
+    domtoimage.toBlob(canvas)
         .then(function (blob) {
             saveAs(blob, 'my-meme.png');
         });
