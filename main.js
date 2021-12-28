@@ -3,14 +3,14 @@
 const lightBtn = document.getElementById('light-theme-button'); 
 const darkBtn = document. getElementById ('dark-theme-button'); 
 
-darkBtn.addEventListener('click',()=>{
+darkBtn.addEventListener('click',() => {
     darkBtn.style.display ='none';
     lightBtn.style.display ='inline';
     document.body.classList.remove('dark-theme');
     document.body.classList.add('light-theme');
 })
 
-lightBtn.addEventListener('click',()=>{
+lightBtn.addEventListener('click',() => {
     lightBtn.style.display='none';
     darkBtn.style.display='inline';
     document.body.classList.remove('light-theme');
@@ -35,14 +35,14 @@ function closeNav() {
     asideResponsive.style.display ='none';
   }
 
-textBtn.addEventListener('click',()=>{
+textBtn.addEventListener('click',() => {
     asideImage.style.display ='none';
     asideText.style.display ='flex';
     asideResponsive.style.display ='block'
     
 });
 
-imageBtn.addEventListener('click',()=>{
+imageBtn.addEventListener('click',() => {
     asideImage.style.display='block';
     asideText.style.display='none';
     asideResponsive.style.display='block'
@@ -53,7 +53,7 @@ imageBtn.addEventListener('click',()=>{
 const url = document.getElementById ('url')
 const center = document.getElementById ('center-text')
 
-url.addEventListener('keyup',(e)=>{
+url.addEventListener('keyup',(e) => {
     center.style.backgroundImage= `url(${e.target.value})`
     center.style.backgroundPosition='center'
     center.style.backgroundRepeat='no-repeat'
@@ -65,7 +65,7 @@ const colorForImage = document.getElementById('blend-mode-color-input');
 const valueOfColor = document.getElementById('blend-mode-color'); 
 const imageOptions = document.getElementById('blend-mode-select');
 
-colorForImage.addEventListener('input',(e)=>{
+colorForImage.addEventListener('input',(e) => {
     center.style.backgroundColor = e.target.value;
     valueOfColor.innerText = e.target.value;
 });
@@ -151,17 +151,17 @@ const borrarBottomText = document.getElementById('no-bottom-text-checkbox');
 
 // Escritura //
 
-topTextArea.addEventListener('keydown',(e)=>{
+topTextArea.addEventListener('keydown',(e) => {
     memeTopText.innerText = e.target.value;
 });
 
-BottomtextArea.addEventListener('keydown',(e)=>{
+BottomtextArea.addEventListener('keydown',(e) => {
     memeBottomText.innerText= e.target.value;
 });
 
 // Borrar Escritura //
 
-borrarTopText.addEventListener('change',()=>{
+borrarTopText.addEventListener('change',() => {
     if (borrarTopText.checked) {
         memeTopText.style.display = 'none';
     } else {
@@ -169,7 +169,7 @@ borrarTopText.addEventListener('change',()=>{
     }
 });
 
-borrarBottomText.addEventListener('change',()=>{
+borrarBottomText.addEventListener('change',() => {
     if (borrarBottomText.checked) {
         memeBottomText.style.display = 'none';
     } else {
@@ -182,7 +182,7 @@ borrarBottomText.addEventListener('change',()=>{
 const fontSelection = document.getElementById ('text-font-select'); 
 const fontSize = document.getElementById('text-size-input'); 
 
-fontSelection.addEventListener("change",(e)=>{
+fontSelection.addEventListener("change",(e) => {
   const fontValue = e.target.value;
   if (fontValue === "Arial") {
     memeTopText.style.fontFamily = `Arial`;
@@ -227,16 +227,16 @@ const alignLeft= document.getElementById('text-left-align-button');
 const alignCenter=document.getElementById('text-center-align-button');
 const alignRight= document.getElementById('text-right-align-button');
 
-alignLeft.addEventListener('click',()=>{
+alignLeft.addEventListener('click',() => {
     memeTopText.style.textAlign = 'left';
     memeBottomText.style.textAlign = 'left';
 });
 
-alignCenter.addEventListener('click',()=>{
+alignCenter.addEventListener('click',() => {
     memeTopText.style.textAlign='center';
     memeBottomText.style.textAlign='center';
 })
-alignRight.addEventListener('click',()=>{
+alignRight.addEventListener('click',() => {
     memeTopText.style.textAlign= 'right';
     memeBottomText.style.textAlign='right';
 })
@@ -248,13 +248,13 @@ const fontColorValue= document.getElementById('text-color');
 const textBackColor =document.getElementById('text-background-color-input'); 
 const backColorValue = document.getElementById('text-background-color')
 
-fontColor.addEventListener('input',(e)=>{
+fontColor.addEventListener('input',(e) => {
     memeTopText.style.color = e.target.value;
     memeBottomText.style.color = e.target.value;
     fontColorValue.innerText = e.target.value;
 });
 
-textBackColor.addEventListener('input',(e)=>{
+textBackColor.addEventListener('input',(e) => {
     memeTopText.style.backgroundColor = e.target.value;
     memeBottomText.style.backgroundColor = e.target.value;
     backColorValue.innerText = e.target.value;
@@ -264,7 +264,7 @@ textBackColor.addEventListener('input',(e)=>{
 
 const transparentBack =document.getElementById('text-no-background-checkbox');
 
-transparentBack.addEventListener('change',()=>{
+transparentBack.addEventListener('change',() => {
     if (transparentBack.checked) {
         memeTopText.style.backgroundColor = 'black';
         memeBottomText.style.backgroundColor = 'black';
@@ -282,7 +282,7 @@ const noContour = document.getElementById('no-outline-button');
 const lightContour = document.getElementById('light-outline-button'); 
 const darkContour = document.getElementById ('dark-outline-button')
 
-noContour.addEventListener('click', (e)=>{
+noContour.addEventListener('click', (e) => {
     e.preventDefault();
     memeTopText.classList.remove('light-outline-button');
     memeTopText.classList.remove('dark-outline-button');
@@ -290,7 +290,7 @@ noContour.addEventListener('click', (e)=>{
     memeBottomText.classList.remove('dark-outline-button');
 });
 
-lightContour.addEventListener('click',(e)=>{
+lightContour.addEventListener('click',(e) => {
     e.preventDefault();
     memeTopText.classList.add('light-outline-button');
     memeBottomText.classList.add('light-outline-button');
@@ -298,7 +298,7 @@ lightContour.addEventListener('click',(e)=>{
     memeBottomText.classList.remove('dark-outline-button');
 })
 
-darkContour.addEventListener('click',(e)=>{
+darkContour.addEventListener('click',(e) => {
     e.preventDefault();
     memeTopText.classList.add('dark-outline-button');
     memeBottomText.classList.add('dark-outline-button');
@@ -310,7 +310,7 @@ darkContour.addEventListener('click',(e)=>{
 
 const fontSpacing =document.getElementById ('padding-input')
 
-fontSpacing.addEventListener('change',(e)=>{
+fontSpacing.addEventListener('change',(e) => {
     memeTopText.style.padding = `${e.target.value}px 15px`;
     memeBottomText.style.padding = `${e.target.value}px 15px`;
     memeBottomText.style.marginTop = '0';
@@ -319,13 +319,13 @@ fontSpacing.addEventListener('change',(e)=>{
 //Interlineado//
 
 const intFont = document.getElementById('line-height-input');
-intFont.addEventListener('change',(e)=>{
+intFont.addEventListener('change',(e) => {
     memeTopText.style.lineHeight = e.target.value;
     memeBottomText.style.lineHeight = e.target.value;
     memeBottomText.style.marginTop = '0';
 });
 
-const ajustarTexto =()=>{
+const ajustarTexto =() => {
     if (window.innerWidth > 1100) {
       return
     }
@@ -348,7 +348,7 @@ const resultImage = document.getElementById ('canvas')
 
 
 
-const downloadImage = ()=>{
+const downloadImage = () => {
     domtoimage.toBlob(canvas)
         .then(function (blob) {
             saveAs(blob, 'my-meme.png');
@@ -356,7 +356,7 @@ const downloadImage = ()=>{
 };
 
 
-download.addEventListener('click',()=>{
+download.addEventListener('click',() => {
     downloadImage();
     center.style.width= '100%'
    
