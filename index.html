@@ -19,10 +19,12 @@
 <body class="dark-theme">
 
 <!--****************HEADER********************-->
+
 <header class="container-title-button">
 <h1 class="app-title">Generador de Memes</h1>
 
 <!--****************NAV***********************-->
+
 <nav class="panel-buttons">
   <div class="button image" id="panel-img-button">
    
@@ -48,6 +50,7 @@
 </header>
 
 <!--****************MAIN*************************-->
+
 <main class="main">
   <section id="canvas" class="section">
     <div id="first-text" class="top-input">TOP TEXT</div>
@@ -58,6 +61,7 @@
 
   
   <!--****************DOWNLOAD BUTTON*************************-->  
+  
   <button id="button-download" class="download-button-text">
     <i class="fas fa-download" aria-hidden="true"></i>  
     Descargar meme
@@ -65,7 +69,8 @@
 </main>
 
   <!--******************ASIDE*********************-->
-<aside class="selection-panel"id="selection-panel-close" >
+
+  <aside class="selection-panel"id="selection-panel-close" >
   <button class="close-button">
     <i class="fas fa-times"id="closeResponsive" onclick="closeNav()"></i>
   </button>
@@ -79,18 +84,19 @@
   <input type="url"class="panel-control-input"id="url" aria-label="URL de imagen">
 </form>
 
-
 <!--****************FONDO*************************-->
 
 <div class="panel-control">
-  <label class="panel-control-title">FONDO</label>
+  <div class="panel-control-title">FONDO</div>
   <div class="panel-control-columns">
   <div class="panel-control-color panel-control-column">
-  <input type="color" id="blend-mode-color-input" value="#FFFFFF" aria-label="Color de fondo de imagen">
+  <input type="color" id="blend-mode-color-input" value="#FFFFFF" 
+  aria-label="Color de fondo de imagen">
   <span id="blend-mode-color" aria-hidden="true">#FFFFFF</span>
   </div>
   <div class="panel-control-column">
-  <select aria-label="Modo de mezcla de fondo de imagen" id="blend-mode-select" class="panel-control-input">
+  <select aria-label="Modo de mezcla de fondo de imagen" id="blend-mode-select" 
+  class="panel-control-input">
         <option value="unset">Ninguno</option>
         <option value="lighten">Aclarar</option>
         <option value="darken">Oscurecer</option>
@@ -101,8 +107,8 @@
   </div>
   </div>
   </div>
-
 <!--****************FILTROS*************************-->
+
 <div class="panel-control">
   <label class="panel-control-title">FILTROS</label>
   <div class="panel-control-slider">
@@ -147,14 +153,12 @@
 
 <!--****************Panel de Texto*************************-->
 
-
 <section class="panel-text-oculto" id="panel-text" style="display: none">
-  
-<h2 class="panel-title">TEXTO</h2>
-
-  <div class="panel-control">
+  <h2 class="panel-title">TEXTO</h2>
+<div class="panel-control">
     <h3 class="panel-control-title">SUPERIOR</h3>
-    <textarea aria-label="Texto superior" class="panel-control-input" id="top-text-input">TOP TEXT</textarea>
+    <textarea aria-label="Texto superior" class="panel-control-input" 
+    id="top-text-input">TOP TEXT</textarea>
     <div class="flex-container panel-control-checkbox">
       <input type="checkbox" id="no-top-text-checkbox"><label for="no-top-text-checkbox">Sin texto
         superior</label>
@@ -176,7 +180,8 @@
 
     <!--****************FAMILY FONTS***************************-->
 
-    <select name="Familia de fuente" id="text-font-select" class="panel-control-input" aria-label="Familia de fuente">
+    <select name="Familia de fuente" id="text-font-select" class="panel-control-input" 
+    aria-label="Familia de fuente">
       <option value="Arial">Arial</option>
       <option value="Arial Black">Arial Black</option>
       <option value="American Typewriter">American Typewriter</option>
@@ -189,26 +194,33 @@
     </select>
     <div class="flex-container"div>
       <!--***************SIZE**********************************-->
-      <input type="number" name="Tamaño de fuente" aria-label="Tamaño de fuente" class="panel-control-input" id="text-size-input" min="12"
-      value="40"/>
+
+      <input type="number" name="Tamaño de fuente" aria-label="Tamaño de fuente" 
+      class="panel-control-input" 
+      id="text-size-input" min="12"value="40"/>
       
       <!--****************ALIGNED******************************-->
       
       <div class="buttons-container buttons-alignment">
         <button class="button button-default" id="text-left-align-button"
-          aria-label="Alinear texto a la izquierda"><i class="fas fa-align-left" aria-hidden="true"></i></button>
+          aria-label="Alinear texto a la izquierda"><i class="fas fa-align-left" 
+          aria-hidden="true"></i></button>
         <button class="button button-default" id="text-center-align-button"
-          aria-label="Alinear texto al centro"><i class="fas fa-align-center" aria-hidden="true"></i></button>
+          aria-label="Alinear texto al centro"><i class="fas fa-align-center" 
+          aria-hidden="true"></i></button>
         <button class="button button-default" id="text-right-align-button"
-          aria-label="Alineat texto a la derecha"><i class="fas fa-align-right" aria-hidden="true"></i></button>
+          aria-label="Alineat texto a la derecha"><i class="fas fa-align-right" 
+          aria-hidden="true"></i></button>
       </div>
     </div>
   </div>
   <!--********************Color *********************************-->
+
   <div class="panel-control panel-control-column">
     <h3 class="panel-control-title">COLOR</h3>
     <div class="panel-control-color">
-      <input name="Color de texto" type="color" id="text-color-input" value="#000000" aria-label="Color de texto" />
+      <input name="Color de texto" type="color" id="text-color-input" value="#000000" 
+      aria-label="Color de texto" />
       <span id="text-color" aria-hidden="true">#000000</span>
     </div>
   </div>
@@ -218,7 +230,8 @@
   <div class="panel-control panel-control-column">
     <h3 class="panel-control-title">FONDO</h3>
     <div class="panel-control-color">
-      <input name="Color de fondo de texto" type="color" id="text-background-color-input" value="#FFFFFF" aria-label="Color de fondo de texto" />
+      <input name="Color de fondo de texto" type="color" id="text-background-color-input"
+      value="#FFFFFF" aria-label="Color de fondo de texto" />
       <span id="text-background-color" aria-hidden="true">#FFFFFF</span>
     </div>
   </div>
@@ -243,9 +256,9 @@
 <!--**********************Padding********************************-->
 
 <div class="panel-control">
-  <h3 class="panel-control-title">ESPACIADO</h3>
-  <input type="number" id="padding-input" class="panel-control-input" aria-label="Espaciado" min="10" max="50"
-    value="">
+  <label class="panel-control-title">ESPACIADO</label>
+  <input type="number" id="padding-input" class="panel-control-input" 
+  aria-label="Espaciado" min="10" max="50"value="">
 </div>
 
 <!--**********************Line Height****************************-->
@@ -263,13 +276,14 @@
 </div>
 </section>
 </div>
-
 </aside>
-   
-        
- </main>
+</main>
 <script src="main.js"></script> 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js" integrity="sha512-01CJ9/g7e8cUmY0DFTMcUw/ikS799FHiOA0eyHsUWfOetgbx/t6oV4otQ5zXKQyIrQGTHSmRVPIgrgLcZi/WMA==" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js" integrity="sha512-Qlv6VSKh1gDKGoJbnyA5RMXYcvnpIqhO++MhIM2fStMcGT9i2T//tSwYFlcyoRRDcDZ+TYHpH8azBBCyhpSeqw==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js" 
+integrity="sha512-01CJ9/g7e8cUmY0DFTMcUw/ikS799FHiOA0eyHsUWfOetgbx/t6oV4otQ5zXKQyIrQGTHSmRVPIgrgLcZi/WMA==" 
+crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js" 
+  integrity="sha512-Qlv6VSKh1gDKGoJbnyA5RMXYcvnpIqhO++MhIM2fStMcGT9i2T//tSwYFlcyoRRDcDZ+TYHpH8azBBCyhpSeqw==" 
+  crossorigin="anonymous"></script>
 </body>
 </html>
